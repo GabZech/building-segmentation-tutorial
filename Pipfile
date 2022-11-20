@@ -4,6 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+rasterio = "*"
+pandas = "*"
+matplotlib = "*"
+geopyspark = "*"
+pyspark = "*"
 
 [dev-packages]
 
