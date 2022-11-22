@@ -10,6 +10,8 @@ matplotlib = "*"
 geopyspark = "*"
 pyspark = "*"
 opencv-python = "*"
+geopandas = "*"
+patchify = "*"
 
 [dev-packages]
 
