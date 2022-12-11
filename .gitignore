@@ -134,3 +134,5 @@ dmypy.json
 data_raw
 output
 seg_venv
+src/data_preparation2.ipynb
+bn.ipynb
