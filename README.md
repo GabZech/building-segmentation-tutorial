@@ -14,4 +14,4 @@ This tutorial provides an end-to-end workflow of image segmentation based on sat
 
 The self-contained tutorial notebook can be found in this repository under [DL_tutorial_memo_and_overview.ipynb]([https://www.google.com](https://github.com/GabZech/building-segmentation-tutorial/blob/main/DL_tutorial_memo_and_overview.ipynb)). Enjoy!
 
-&copy; The header image on this site was created in Python using raw images and building masks from [GEOportal.NRW ]([[https://www.google.com](https://www.geoportal.nrw/?activetab=portal)]
+&copy; The header image on this site was created in Python using raw images and building masks from [GEOportal.NRW ](https://www.geoportal.nrw/?activetab=portal)
