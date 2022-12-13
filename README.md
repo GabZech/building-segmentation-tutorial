@@ -14,6 +14,6 @@ This tutorial provides an end-to-end workflow of image segmentation based on aer
 
 The self-contained tutorial notebook can be found in this repository under [Tutorial_notebook.ipynb](https://github.com/GabZech/building-segmentation-tutorial/blob/main/Tutorial_notebook.ipynb). 
 
-A video tutorial that provides a walkthrough of the notebook is retrievable through the following link: https://we.tl/t-s5GGPVu4uJ (please make sure to download it within seven days as the link expires)
+A video tutorial that provides a walkthrough of the notebook is retrievable through the following link: [https://we.tl/t-s5GGPVu4uJ](https://we.tl/t-roCJsvrGEU) (please make sure to download it within seven days as the link expires)
 
 &copy; Header image was created by ourselves in Python using raw images and building masks from [GEOportal.NRW ](https://www.geoportal.nrw/?activetab=portal)
