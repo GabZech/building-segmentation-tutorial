@@ -12,8 +12,11 @@ pyspark = "*"
 opencv-python = "*"
 geopandas = "*"
 patchify = "*"
+shapely = "*"
+pillow = "*"
+torch = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.7.9"
