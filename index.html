@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>tutorial_notebook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Tutorial_notebook_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Tutorial_notebook_files/libs/quarto-html/quarto.js"></script>
+<script src="Tutorial_notebook_files/libs/quarto-html/popper.min.js"></script>
+<script src="Tutorial_notebook_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Tutorial_notebook_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Tutorial_notebook_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Tutorial_notebook_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Tutorial_notebook_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Tutorial_notebook_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Tutorial_notebook_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#tutorial-image-segmentation-of-aerial-imagery" id="toc-tutorial-image-segmentation-of-aerial-imagery" class="nav-link active" data-scroll-target="#tutorial-image-segmentation-of-aerial-imagery">Tutorial: Image Segmentation of Aerial Imagery</a></li>
+  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#background-prerequisites" id="toc-background-prerequisites" class="nav-link" data-scroll-target="#background-prerequisites">Background &amp; Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  <li><a href="#reading-materials" id="toc-reading-materials" class="nav-link" data-scroll-target="#reading-materials">Reading materials</a>
+  <ul class="collapse">
+  <li><a href="#introductory-articles" id="toc-introductory-articles" class="nav-link" data-scroll-target="#introductory-articles">Introductory articles</a></li>
+  <li><a href="#datasets-and-tools" id="toc-datasets-and-tools" class="nav-link" data-scroll-target="#datasets-and-tools">Datasets and tools</a></li>
+  <li><a href="#tutorials-with-code" id="toc-tutorials-with-code" class="nav-link" data-scroll-target="#tutorials-with-code">Tutorials with code</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#software-requirements" id="toc-software-requirements" class="nav-link" data-scroll-target="#software-requirements">Software Requirements</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a>
+  <ul class="collapse">
+  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download">Data Download</a>
+  <ul class="collapse">
+  <li><a href="#step-1-download-tile-data-paths-aerial-images-and-metadata" id="toc-step-1-download-tile-data-paths-aerial-images-and-metadata" class="nav-link" data-scroll-target="#step-1-download-tile-data-paths-aerial-images-and-metadata">Step 1: Download tile data paths (aerial images and metadata)</a></li>
+  <li><a href="#step-2-retrieve-shapefiles-building-footprints" id="toc-step-2-retrieve-shapefiles-building-footprints" class="nav-link" data-scroll-target="#step-2-retrieve-shapefiles-building-footprints">Step 2: Retrieve shapefiles (building footprints)</a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#step-3-combine-shapefile-to-polygon" id="toc-step-3-combine-shapefile-to-polygon" class="nav-link" data-scroll-target="#step-3-combine-shapefile-to-polygon">Step 3: Combine shapefile to polygon</a></li>
+  <li><a href="#step-4-generate-masks" id="toc-step-4-generate-masks" class="nav-link" data-scroll-target="#step-4-generate-masks">Step 4: Generate Masks</a></li>
+  <li><a href="#step-5-patchify-and-save-images-and-masks" id="toc-step-5-patchify-and-save-images-and-masks" class="nav-link" data-scroll-target="#step-5-patchify-and-save-images-and-masks">Step 5: Patchify and save images and masks</a></li>
+  <li><a href="#step-6-removing-patches-with-no-visible-buildings" id="toc-step-6-removing-patches-with-no-visible-buildings" class="nav-link" data-scroll-target="#step-6-removing-patches-with-no-visible-buildings">Step 6: Removing patches with no visible buildings</a></li>
+  <li><a href="#step-7-create-train-validation-and-test-datasets" id="toc-step-7-create-train-validation-and-test-datasets" class="nav-link" data-scroll-target="#step-7-create-train-validation-and-test-datasets">Step 7: Create train, validation and test datasets</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#model-training-and-testing" id="toc-model-training-and-testing" class="nav-link" data-scroll-target="#model-training-and-testing">Model Training and Testing</a>
+  <ul class="collapse">
+  <li><a href="#defining-the-u-net-model" id="toc-defining-the-u-net-model" class="nav-link" data-scroll-target="#defining-the-u-net-model">Defining the U-Net model</a>
+  <ul class="collapse">
+  <li><a href="#u-net-model-architecture" id="toc-u-net-model-architecture" class="nav-link" data-scroll-target="#u-net-model-architecture">U-Net Model Architecture</a></li>
+  <li><a href="#simplified-unet-model" id="toc-simplified-unet-model" class="nav-link" data-scroll-target="#simplified-unet-model">Simplified UNet model</a></li>
+  <li><a href="#step-8-training-the-u-net-model" id="toc-step-8-training-the-u-net-model" class="nav-link" data-scroll-target="#step-8-training-the-u-net-model">Step 8: Training the U-Net model</a></li>
+  <li><a href="#step-9-testing-the-u-net-model-using-loss-function" id="toc-step-9-testing-the-u-net-model-using-loss-function" class="nav-link" data-scroll-target="#step-9-testing-the-u-net-model-using-loss-function">Step 9: Testing the U-Net model using loss function</a></li>
+  <li><a href="#step-10-running-the-model-to-generate-a-sample-prediction" id="toc-step-10-running-the-model-to-generate-a-sample-prediction" class="nav-link" data-scroll-target="#step-10-running-the-model-to-generate-a-sample-prediction">Step 10: Running the model to generate a sample prediction</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a>
+  <ul class="collapse">
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#data-accessibility-and-availability" id="toc-data-accessibility-and-availability" class="nav-link" data-scroll-target="#data-accessibility-and-availability">Data accessibility and availability</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content column-page-right" id="quarto-document-content">
+
+
+
+<section id="tutorial-image-segmentation-of-aerial-imagery" class="level1">
+<h1>Tutorial: Image Segmentation of Aerial Imagery</h1>
+<p><img src="https://raw.githubusercontent.com/GabZech/building-segmentation-tutorial/main/img/wide2.png" width="100%"></p>
+<p>Authors:</p>
+<ul>
+<li>Gabriel da Silva Zech (<a href="https://github.com/GabZech">GabZech</a>)</li>
+<li>Julian Kath (<a href="https://github.com/juka19">juka19</a>)</li>
+<li>Krishnamoorthy Manohara (<a href="https://github.com/KrishnaM313">KrishnaM313</a>)</li>
+<li>Florian Winkler (<a href="https://github.com/f-winkler">f-winkler</a>)</li>
+<li>Nassim Zoueini (<a href="https://github.com/nassimzoueini">nassimzoueini</a>)</li>
+</ul>
+<p>This tutorial provides an end-to-end workflow of image segmentation based on aerial images. It introduces a U-net convolutional neural network approach to segmenting buildings from aerial imagery as a specific application of deep learning in a public policy context. Built in a PyTorch environment, the tutorial provides users step-by-step explanations of image segmentation and an example of reproducible, working code in a self-contained notebook. Users will benefit from a structured and practical overview of how to collect and pre-process aerial image data, how to create a custom dataset that annotates aerial images using building footprints, and how to train and fine-tune an image segmentation model on aerial imagery. The tutorial can be extended to further projects that involve a similar approach to aerial or satellite image segmentation, such as segmenting roads or crop fields.</p>
+<p>All related files can be found in the following repository: <a href="https://github.com/GabZech/building-segmentation-tutorial">https://github.com/GabZech/building-segmentation-tutorial</a></p>
+</section>
+<section id="table-of-contents" class="level1">
+<h1>Table of Contents</h1>
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#overview">Project Overview</a></li>
+<li><a href="#background-and-prereqs">Background &amp; Prerequisites</a></li>
+<li><a href="#software-requirements">Software Requirements</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#data-description">Data Description</a></li>
+<li><a href="#modeltraintest">Model Training and Testing</a></li>
+<li><a href="#results-and-discussion">Results &amp; Discussion</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p><a name="introduction" href=""></a></p>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p><strong>Image segmentation</strong> is a digital image processing method which divides an image into similar segments by assigning labels to each pixel in an image. A prime application of computer vision that uses deep learning, image segmentation leverages artificial intelligence (AI) to identify objects in a large number of images, localize their boundaries, and delineate areas for further processing.</p>
+<p>While image segmentation has traditionally been used in medical imaging, agriculture and self-driving vehicles, segmentation of satellite and aerial images bears tremendous potential for applications in public policy. Computer vision adds significant value in both the speed and accuracy of insights from high-resolution imagery from space where the human eye is unable to detect relevant information. Image segmentation helps governments operate more efficiently by automating detection, localization, measurement and monitoring activities from space.</p>
+<p>In the <strong>energy and infrastructure</strong> domain, the segmentation of buildings from satellite and aerial images can be used by governments and energy providers to forecast energy supply, e.g.&nbsp;by measuring <a href="https://sunroof.withgoogle.com/#/p=0">rooftops’ solar power potential</a>. In addition, image segmentation helps authorities monitor critical infrastructure, such as <a href="https://www.mdpi.com/2072-4292/11/11/1342">power lines</a> or <a href="https://ieeexplore.ieee.org/abstract/document/9491736">railways</a>, from space in real time. For example, a collaboration between space startup LiveEO and Deutsche Bahn leverages image segmentation for near-real time <a href="https://www.deutschebahn.com/en/Digitalization/startups/db_startups/LiveEO-6935360">vegetation management</a> along railway tracks in Germany.</p>
+<p>In <strong>smart cities</strong>, local governments can use image segmentation of roads, vehicles and pedestrians for trafic control systems, pedestrian detection and video surveillance. Moreover, image segmentation allows <strong>urban planners</strong> to analyse the use of land cover for planning purposes, e.g.&nbsp;distinguishing agricultural land and residential areas in large areas for further processing.</p>
+<p>Supporting <strong>environmental protection</strong>, image segmentation also enables governments to monitor environmental changes from space, e.g.&nbsp;by <a href="https://www.bu.edu/articles/2016/satellite-maps-deforestation/">measuring deforestation</a> or desertification. Finally, satellite and aerial image segmentation can provide crucial help to authorities in <strong>disaster response</strong>, such as wildfires, <a href="https://www.hotosm.org/updates/2017-03-15_imagery_released_for_cyclone_enawo_to_support_mapping_activities">floods</a> or landslides, e.g.&nbsp;by measuring and monitoring impacted areas.</p>
+<p><a name="overview" href=""></a></p>
+</section>
+<section id="project-overview" class="level1">
+<h1>Project Overview</h1>
+<p>Applying segmentation to aerial images from the region of North Rhine-Westphalia (NRW) in Germany, this tutorial showcases the use of image segmentation as a powerful method of deep learning to segment buildings from aerial imagery. For educational purposes, we choose aerial over satellite images due to better data quality and higher resolutions provided by our data source <a href="https://www.geoportal.nrw/?activetab=portal">GEOportal.NRW</a>. Satellite images are increasingly available in moderate to high resolutions, decreasing in cost, and a key driver of deep learning applications and open data approaches in public policy. Aerial images, i.e.&nbsp;photographs taken from aircrafts or drones, provide users with images of even higher resolutions, albeit at the cost of accessibility and availability. Both satellite and aerial images are suitable data sources for image segmentation tasks, with little differences in particular segmentation techniques between them.</p>
+<p>This tutorial walks through every step of a real-world image segmentation project, covering tasks from data collection, data pre-processing and image annotation, model training and testing as well as visualizing results. Overall, the tutorial makes two major contributions to users in a pedagogical, step-by-step workflow:</p>
+<ol type="1">
+<li><p><strong>Image annotation</strong>: In order to train a building segmentation algorithm, it is necessary to have a labelled dataset of aerial images which essentially tells a model which object in a aerial image is actually a building. Commonly referred to as “ground truth”, the annotated dataset is used to train a model to extract representational features of buildings. “Learning” the boundaries and features of buildings from labelled data subsequently allows the model to segment buildings on previously unseen aerial images. Labelled datasets of buildings can either be obtained from existing data sources for aerial or satellite images (see Rob Cole’s invaluable list of <a href="https://github.com/robmarkcole/satellite-image-deep-learning#Segmentation">annotated datasets for segmentation</a> for satellite images for instance) or created on your own. To demonstrate the steps of collecting and pre-processing a aerial image dataset, this tutorial shows how to create a custom labeled dataset using aerial images and building footprints. In more technical terms, we use geo-referenced polygon shapes of buildings to lay building footprints on top of aerial images in order to create so-called image-mask pairs for each location.</p></li>
+<li><p><strong>Training an image segmentation model</strong>: The second key contribution of this tutorial is a real-world implementation of training and fine-tuning an image segmentation algorithm to segment buildings in aerial images. Applying a U-net convolutional neural network to our previously annotated dataset, we show how to use the image-mask pairs to train a binary (single-class) segmentation model that is able to identify, localize and delineate buildings in previously unseen aerial images.</p></li>
+</ol>
+<p><a name="background-and-prereqs" href=""></a></p>
+</section>
+<section id="background-prerequisites" class="level1">
+<h1>Background &amp; Prerequisites</h1>
+<p>Following this tutorial requires working knowledge in Python and basic knowledge of deep neural networks such as convolutional neural networks. For the most important concepts of our tutorial, a brief explanation of image segmentation techniques, image annotation and the U-Net model architecture that we use are presented.</p>
+<p><strong>Different types of image segmentation</strong>: Semantic segmentation, instance segmentation and panoptic segmentation are specialist techniques of image segmentation of ascending complexity. In semantic segmentation, labeling each pixel in an image with a class enables the identification of objects that contain the same target class (such as “building” or “road”). Instance segmentation identifies and delineates each individual object in an image, for example distinguishing between individual buildings or roads. Panoptic segmentation combines semantic and instance segmentation, so that all pixels in the image are labelled as foreground objects or background. With each extension, annotation of satellite and aerial images will become more time and labour intensive. Single class segmentation is often used for road or building segmentation, with multi class models trained for land use or crop type classification. For introductory purposes, our tutorial showcases the application of single-class semantic segmentation (buildings vs.&nbsp;no building). However, our framework can be adapted in the future to implement instance or panoptic segmentation methods.</p>
+<p><strong>Satellite and aerial image annotation</strong>: There are two common approaches to annotate boundaries of buildings in satellite or aerial images. The first approach is annotating every pixel in an image, producing pixel-level mask files as output. In our binary example of buildings vs.&nbsp;no buildings, this mask image would use pixel values of 0 to represent background (no buildings) and a non-zero value to represent buildings (see a detailed explanation <a href="https://www.satellite-image-deep-learning.com/p/a-brief-introduction-to-satellite-365">here</a>). In the second approach, a text file is provided which lists the polygon boundaries (geometries) of objects in an image. Since annotating every pixel is very time consuming, using polygon data for objects of interest is usually more efficient. There are however many annotation tools that provide a ‘smart assist’ to accelerate pixel-level annotation, for example <a href="https://roboflow.com/">Roboflow</a>. Applying the more common second approach, we use geo-referenced polygon shapes of buildings to annotate aerial images. These building footprints are available to download from NRW’s <a href="https://open.nrw/dataset/407373a2-422c-469c-a7e9-06a62b4d7d9a">GeoPortal</a>.</p>
+<p><strong>U-Net Convolutional Neural Network</strong>: Showcasing a deep learning approach to image segmentation, we use a simplified version of the U-Net architecture as our semantic segmentation algorithm. U-Net is a convolutional neural network that originally developed for biomedical image segmentation. The U-Net model takes two inputs: The aerial image patches and the annotated image-mask pair that has a class label for each pixel. U-Net is a so-called encoder-decoder model where the encoder part performs downsampling (reducing the image resolution) and the encoder part peforms upsampling and concatenation (increasing the image resolution). While sparing you the technical details of the U-Net architecture (which can be found here, if interested), the U-Net has a distinct characterstic that makes it suitable for image segmentation tasks: In upsampling, the lower resolution features learnt by the encoder part are projected onto higher resolution. This allows the output prediction of our segmentation model to be an image of the same resolution as the input image (unlike traditional classification models where the output prediction is only a class label). Essentially, the U-Net is able to reduce the input image to only the key features of interest by reducing the resolution, and then scales them up to obtain the mask.</p>
+<section id="videos" class="level2">
+<h2 class="anchored" data-anchor-id="videos">Videos</h2>
+<p>For a head start into image segmentation and inspiration for future projects, we recommend watching the following videos which introduce deep learning to satellite and aerial images and walk through the implementation of image segmentation using a similar U-net architecture we have chosen for this tutorial.</p>
+<p>Video 1: When deep learning meets satellite imagery (by Preligens)</p>
+<div class="cell" data-outputid="e0758440-6742-43b8-d585-cf39fff275db" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> YouTubeVideo</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>YouTubeVideo(<span class="st">'CQlLa_UWncg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+        <iframe width="400" height="300" src="https://www.youtube.com/embed/CQlLa_UWncg" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Video 2: Semantic segmentation of aerial (satellite) imagery using U-net (by DigitalSreeni)</p>
+<div class="cell" data-outputid="7082c4fc-1f0e-4a47-da2f-c4151f5fee00" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> YouTubeVideo</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>YouTubeVideo(<span class="st">'jvZm8REF2KY'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+        <iframe width="400" height="300" src="https://www.youtube.com/embed/jvZm8REF2KY" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p>Video 3: PyTorch Image Segmentation Tutorial with U-NET: everything from scratch baby (by Aladdin Persson)</p>
+<div class="cell" data-outputid="ea25d90b-4ce6-4adb-db83-1f2301ac0e51" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> YouTubeVideo</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>YouTubeVideo(<span class="st">'IHq1t7NxS8k'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+        <iframe width="400" height="300" src="https://www.youtube.com/embed/IHq1t7NxS8k" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+</section>
+<section id="reading-materials" class="level2">
+<h2 class="anchored" data-anchor-id="reading-materials">Reading materials</h2>
+<section id="introductory-articles" class="level3">
+<h3 class="anchored" data-anchor-id="introductory-articles">Introductory articles</h3>
+<ul>
+<li>Robin Cole (2022): <a href="https://www.satellite-image-deep-learning.com/p/a-brief-introduction-to-satellite-365">A brief introduction to satellite image segmentation with neural networks</a>.</li>
+<li>Vooban (2017): <a href="https://medium.com/vooban-ai/satellite-image-segmentation-a-workflow-with-u-net-7ff992b2a56e">Satellite Image Segmentation: a Workflow with U-Net</a>.</li>
+<li>Google Research (2019): <a href="https://ai.googleblog.com/2021/07/mapping-africas-buildings-with.html">Mapping Africa’s Buildings with Satellite Imagery</a>.</li>
+<li>For an example of building segmentation, see Jhansi Anumula (2019): <a href="https://medium.com/swlh/semantic-segmentation-on-aerial-images-using-fastai-a2696e4db127">Semantic Segmentation on Aerial Images using fastai</a>.</li>
+</ul>
+</section>
+<section id="datasets-and-tools" class="level3">
+<h3 class="anchored" data-anchor-id="datasets-and-tools">Datasets and tools</h3>
+<p>A large number of semantic segmentation datasets are available online, varying in spatial resolution, sensor modality and target class (vegetation, roads, building, etc). More recently, efforts have been made to collect relevant data resources in consolidated repositories.</p>
+<ul>
+<li>Robin Cole’s great <a href="https://github.com/robmarkcole/satellite-image-deep-learning">collection of resources and data sets</a> of deep learning applied to satellite imagery, including <a href="https://github.com/robmarkcole/satellite-image-deep-learning#Segmentation">segmentation</a></li>
+<li><a href="https://github.com/mrgloom/awesome-semantic-segmentation#satellite-images-segmentation">Awesome Semantic Segmentation</a></li>
+<li>For a collection of annotated data sets, see <a href="https://github.com/Seyed-Ali-Ahmadi/Awesome_Satellite_Benchmark_Datasets">Awesome_Satellite_Benchmark_Datasets</a> repository (search for ‘SemSeg’)</li>
+<li>Google’s <a href="https://sites.research.google/open-buildings/">Open Buildings</a> dataset with building footprints in Africa and South East Asia</li>
+<li><a href="https://github.com/open-mmlab/mmsegmentation">MMSegmentation</a> is an open source semantic segmentation toolbox with support for many remote sensing datasets</li>
+</ul>
+</section>
+<section id="tutorials-with-code" class="level3">
+<h3 class="anchored" data-anchor-id="tutorials-with-code">Tutorials with code</h3>
+<ul>
+<li>Maurício Cordeiro (2020): <a href="https://medium.com/analytics-vidhya/creating-a-very-simple-u-net-model-with-pytorch-for-semantic-segmentation-of-satellite-images-223aa216e705">Creating a Very Simple U-Net Model with PyTorch for Semantic Segmentation of Satellite Images</a>.</li>
+<li>Raoof Naushad (2020): <a href="https://medium.com/dataseries/image-semantic-segmentation-of-satellite-imagery-using-u-net-e99ae13cf464">Image Semantic Segmentation of Satellite Imagery using U-Net</a>.</li>
+<li>Deep Learning Berlin (2021): <a href="https://deeplearning.berlin/satellite%20imagery/computer%20vision/fastai/2021/02/17/Building-Detection-SpaceNet7.html">Detecting Buildings in Satellite Images</a>.</li>
+<li>For an example of instance segmentation, see the <a href="https://github.com/Mstfakts/Building-Detection-MaskRCNN#3--from-theory-to-implementation">Building-Detection-MaskRCNN</a> repository for building detection by using a Mask RCNN model architecture.</li>
+</ul>
+<p><a name="software-requirements" href=""></a></p>
+</section>
+</section>
+</section>
+<section id="software-requirements" class="level1">
+<h1>Software Requirements</h1>
+<p>This notebook requires Python &gt;= 3.7.9 The following libraries are required: * Data manipulation: <em>pandas</em>, <em>numpy</em> * Geospatial data processing libraries: <em>geopandas</em>, <em>rasterio</em>, <em>shapely</em> * Deep learning architecture: <em>PyTorch</em> * Image processing libraries: <em>patchify</em>, <em>cv2</em>, <em>PIL</em> * General helper modules: <em>urllib</em>, <em>xml.etree.ElementTree</em>, <em>io</em>, <em>zipfile</em>, <em>time</em>, <em>os</em></p>
+<p><a name="workflow" href=""></a></p>
+</section>
+<section id="workflow" class="level1">
+<h1>Workflow</h1>
+<p>The workflow as described below, will be the basis of this tutorial. We first start by retrieving the data from the mentioned sources, preprocess it in order to make it ready for the model training then finally train the model and extract results.</p>
+<p><img src="https://github.com/GabZech/building-segmentation-tutorial/blob/main/img/1_Workflow%20Diagram.jpg?raw=1" class="img-fluid"></p>
+<p>After examining the different parts of the process, let us start by installing the required packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio.mask</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.features <span class="im">import</span> rasterize</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> Polygon</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> patchify <span class="im">import</span> patchify</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> PIL.ImageOps </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xml.etree.ElementTree <span class="im">as</span> ET</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shapely</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> zipfile <span class="im">import</span> ZipFile</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch <span class="im">import</span> nn</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> Dataset, DataLoader</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>rs <span class="op">=</span> <span class="dv">42</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a name="data-description" href=""></a></p>
+</section>
+<section id="data-description" class="level1">
+<h1>Data Description</h1>
+<p>The data that we will be using in this tutorial is publicly available on the geoportal of the North-Rhine-Westphalia State of Germany on <a href="https://www.opengeodata.nrw.de">https://www.opengeodata.nrw.de</a>.</p>
+<p>For visual reference, this is how an aerial image looks like in the geoportal:</p>
+<p><img src="https://raw.githubusercontent.com/GabZech/building-segmentation-tutorial/main/img/image-tile.png" class="img-fluid"></p>
+<p>The aerial images were retrieved as individual 10000x10000 pixel tiles from <a href="https://www.opengeodata.nrw.de/produkte/geobasis/lusat/dop/dop_jp2_f10/">the geoportal’s Digital Orthophotos service</a>. The building footprints were queried from an attached <a href="https://www.bezreg-koeln.nrw.de/brk_internet/geobasis/webdienste/index.html">geo-webservice</a> that can be queried by providing the bounding box of the area of interest.</p>
+<p>The open data provides aerial imagery of the state with a resolution of 10 centimeters per pixel, that are all geolocated and time-stamped. The building footprints are provided in Geography Markup Language, an XML variant. A sample of the data will be shown below.</p>
+<section id="data-download" class="level2">
+<h2 class="anchored" data-anchor-id="data-download">Data Download</h2>
+<p>The metadata provided by the NRW online portal is accessible through this link https://www.opengeodata.nrw.de/produkte/geobasis/lusat/dop/dop_jp2_f10/dop_meta.zip</p>
+<p><img src="https://github.com/GabZech/building-segmentation-tutorial/blob/main/img/2_Data%20Preparation.jpg?raw=1" class="img-fluid"></p>
+<section id="step-1-download-tile-data-paths-aerial-images-and-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-download-tile-data-paths-aerial-images-and-metadata">Step 1: Download tile data paths (aerial images and metadata)</h3>
+<p>The first step is to download the metadata containing information about all individual 1kmx1km image tiles (named “Kachelname”), which will later be used to download the images.</p>
+<p>This data is provided in the following csv file:</p>
+<div class="cell" data-outputid="3b34d4cf-3bd6-41af-a35f-951bc8a04df4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>url_metadata <span class="op">=</span> <span class="st">"https://www.opengeodata.nrw.de/produkte/geobasis/lusat/dop/dop_jp2_f10/dop_meta.zip"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>trgt_filename <span class="op">=</span> <span class="st">'dop_nw.csv'</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> urllib.request.urlopen(url_metadata)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>zipfile <span class="op">=</span> ZipFile(BytesIO(response.read()))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>metadata <span class="op">=</span> pd.read_csv(zipfile.<span class="bu">open</span>(trgt_filename), </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                       sep<span class="op">=</span><span class="st">';'</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                       skiprows<span class="op">=</span><span class="dv">5</span>) <span class="co"># skip first 5 rows with irrelevant metadata</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>metadata.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Kachelname</th>
+      <th>Erfassungsmethode</th>
+      <th>Aktualitaet</th>
+      <th>Bildflugnummer</th>
+      <th>Kamera_Sensor</th>
+      <th>Bodenpixelgroesse</th>
+      <th>Spektralkanaele</th>
+      <th>Koordinatenreferenzsystem_Lage</th>
+      <th>Koordinatenreferenzsystem_Hoehe</th>
+      <th>Bezugsflaeche</th>
+      <th>...</th>
+      <th>Anzahl_Zeilen</th>
+      <th>Farbtiefe</th>
+      <th>Standardabweichung</th>
+      <th>Dateiformat</th>
+      <th>Hintergrund</th>
+      <th>Quelldatenqualitaet</th>
+      <th>Kompression</th>
+      <th>Komprimierung</th>
+      <th>Belaubungszustand</th>
+      <th>Bemerkungen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>dop10rgbi_32_375_5666_1_nw_2021</td>
+      <td>0</td>
+      <td>2021-06-02</td>
+      <td>1358/21 Leverkusen Wuppertal</td>
+      <td>DMCIII-27569_DMCIII</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>3</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dop10rgbi_32_438_5765_1_nw_2022</td>
+      <td>0</td>
+      <td>2022-03-10</td>
+      <td>1377/22 Greven Ibbenbüren</td>
+      <td>UCEM3-431S91898X119229-f100_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dop10rgbi_32_366_5723_1_nw_2020</td>
+      <td>0</td>
+      <td>2020-03-23</td>
+      <td>1333/20 Wesel Marl</td>
+      <td>UCEp-1-31011051_UCEp</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>dop10rgbi_32_344_5645_1_nw_2021</td>
+      <td>0</td>
+      <td>2021-03-02</td>
+      <td>1355/21 Düsseldorf Kerpen</td>
+      <td>UCEM3-431S71678X_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dop10rgbi_32_407_5744_1_nw_2022</td>
+      <td>0</td>
+      <td>2022-03-03</td>
+      <td>1379/22 Warendorf</td>
+      <td>DMCIII-27532_DMCIII</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>dop10rgbi_32_397_5744_1_nw_2022</td>
+      <td>0</td>
+      <td>2022-02-27</td>
+      <td>1378/22 Bocholt Coesfeld</td>
+      <td>UCEp-1-31011051-f100_UCEp</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>dop10rgbi_32_313_5624_1_nw_2021</td>
+      <td>0</td>
+      <td>2021-03-07</td>
+      <td>1356/21 Aachen Kronenburg</td>
+      <td>UCEM3-1-82416042_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>dop10rgbi_32_335_5702_1_nw_2020</td>
+      <td>0</td>
+      <td>2020-03-24</td>
+      <td>1334/20 Duisburg Herne</td>
+      <td>UCEM3-431S51194X_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>dop10rgbi_32_388_5791_1_nw_2022</td>
+      <td>0</td>
+      <td>2022-02-23</td>
+      <td>1376/22 Ahaus Rheine</td>
+      <td>UCEM3-431S41091X314298-f100_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>dop10rgbi_32_304_5671_1_nw_2021</td>
+      <td>0</td>
+      <td>2021-02-20</td>
+      <td>1354/21 Mönchengladbach- Würselen</td>
+      <td>UCEM3-431S72402X_UCE-M3</td>
+      <td>10</td>
+      <td>RGBI</td>
+      <td>25832</td>
+      <td>7837</td>
+      <td>bDOM</td>
+      <td>...</td>
+      <td>10000</td>
+      <td>8</td>
+      <td>20</td>
+      <td>JPEG2000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>GDAL_JP2ECW, 90</td>
+      <td>1</td>
+      <td>keine</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 23 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-retrieve-shapefiles-building-footprints" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-retrieve-shapefiles-building-footprints">Step 2: Retrieve shapefiles (building footprints)</h3>
+<p>The next step would be to retrieve the building footprints which will help generating the polygons that delimit the building contours in order to create the masks to be associated to the images at a later stage.</p>
+<p>For a visual reference, the building footprint data looks like this:</p>
+<p><img src="img\footprint.png" class="img-fluid"></p>
+<p>The retrieved tuples related to the building footprints were used to create the bounding boxes used to query the geo webservice. With regards to our tutorial, only the bounding box of the tiles is a changing parameter of the webservice queries, a full documentation can be found <a href="https://www.bezreg-koeln.nrw.de/brk_internet/geobasis/webdienste/anleitung_wms.pdf">here</a>. The response is a GML file, which is in fact an XML file with a specific namespace, containing the building footprints of all buildings within the bounding box, as well as additional metadata. The building footprints then wer converted to shapefile polygons and saved in a geopandas dataframe with the coordinate reference system from the tile. The geopandas dataframe containing the shapefiles of all buildings within the bounding box of the tile then can be passed as input to the mask generation.</p>
+<p>To this end, we define the <em>get_shapefile</em> function - <strong>Input</strong>: bounding box values (only north and east, rest is inferred from tile size) as a tuple - <strong>Output</strong>: geopandas dataframe with polygons of all buildings on the tile</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_shapefile(bbox2:<span class="bu">tuple</span>, crs<span class="op">=</span><span class="st">'EPSG:25832'</span>) <span class="op">-&gt;</span> gpd.GeoDataFrame:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">"https://www.wfs.nrw.de/geobasis/wfs_nw_alkis_vereinfacht?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;TYPENAMES=ave:GebaeudeBauwerk&amp;BBOX="</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> bbox2                                <span class="co"># unpack tuple</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> x <span class="op">+</span> <span class="dv">1000</span>                               <span class="co"># get second lat/lon value for bounding box (always 10000*10000)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    y2 <span class="op">=</span> y <span class="op">+</span> <span class="dv">1000</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    bbox4 <span class="op">=</span> (x, y, x2, y2)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    bbox_str <span class="op">=</span> <span class="st">','</span>.join(<span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">str</span>, bbox4)))  <span class="co"># create bounding box string for API query</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    gml_url <span class="op">=</span> <span class="st">''</span>.join([base_url, bbox_str])</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    req <span class="op">=</span> urllib.request.Request(gml_url)       <span class="co"># query webservice</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    req.get_method <span class="op">=</span> <span class="kw">lambda</span>: <span class="st">'GET'</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> urllib.request.urlopen(req)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    gml_str <span class="op">=</span> response.read()</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    root <span class="op">=</span> ET.ElementTree(ET.fromstring(gml_str)).getroot() <span class="co"># response is formatted as GML, which can be queried like normal XML, by referencing the relevant namespaces</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    namespace <span class="op">=</span> {<span class="st">'gml'</span>: <span class="st">"http://www.opengis.net/gml/3.2"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>             <span class="st">'xmlns'</span>: <span class="st">"http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/2.0"</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>             <span class="st">'wfs'</span>: <span class="st">"http://www.opengis.net/wfs/2.0"</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>             <span class="st">'xsi'</span>: <span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>             }</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    buildings <span class="op">=</span> [i.text <span class="cf">for</span> i <span class="kw">in</span> root.findall(<span class="st">'.//gml:posList'</span>, namespace)]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    funktions <span class="op">=</span> [i.text <span class="cf">for</span> i <span class="kw">in</span> root.<span class="bu">iter</span>(<span class="st">'{http://repository.gdi-de.org/schemas/adv/produkt/alkis-vereinfacht/2.0}funktion'</span>)]</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    ids <span class="op">=</span> [i.items()[<span class="dv">0</span>][<span class="dv">1</span>] <span class="cf">for</span> i <span class="kw">in</span> root.findall(<span class="st">'.//gml:MultiSurface[@gml:id]'</span>, namespace)]</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    building_shapefiles <span class="op">=</span> []</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="bu">id</span>, funktion, build <span class="kw">in</span> <span class="bu">zip</span>(ids, funktions, buildings):</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>        coord_iter <span class="op">=</span> <span class="bu">iter</span>(build.split(<span class="st">' '</span>))                                                 <span class="co"># coordinates are not in the correct format, therefore need to be rearranged            </span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>        coords <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">tuple</span>, <span class="bu">zip</span>(coord_iter, coord_iter)))</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>        poly <span class="op">=</span> shapely.geometry.Polygon([[<span class="bu">float</span>(p[<span class="dv">0</span>]), <span class="bu">float</span>(p[<span class="dv">1</span>])] <span class="cf">for</span> p <span class="kw">in</span> coords])       <span class="co"># create shapefile from points</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>        building_shapefiles.append({<span class="st">'id'</span>: <span class="bu">id</span>, <span class="st">'funktion'</span>:funktion, <span class="st">'geometry'</span>: poly})       <span class="co"># create records of each building on the selected tile</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame.from_records(building_shapefiles)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    gdf <span class="op">=</span> gpd.GeoDataFrame(df, crs<span class="op">=</span>crs)                                                     <span class="co"># return geopandas dataframe for input that can be passed to the mask generation </span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> gdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="data-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
+<p>Now, all the data is retrieved and ready to be pre-processed for image segmentation and the specific requirements of the U-Net model.</p>
+<p>This stage essentially consists of creating the image-mask pairs that will train the model. For this step, we used <a href="https://lpsmlgeo.github.io/2019-09-22-binary_mask/">code by Lucas Pedrosa Soares</a>.</p>
+<p>As a first step, the building footprint shapefiles in the geopandas dataframe were concatenated and merged into one single polygon (this is because we are implementing semantic segmentation and are not interested in an instance segmentation task). This polygon is then used to create a mask for the corresponding image tile.</p>
+<p>Next, the images and masks will be divided into several patches (the size of these patches corresponds to the input size of the U-Net model). We implemented this step once yielding a saved png and once a tensor. The function can be used for both images and masks.</p>
+<p><img src="https://github.com/GabZech/building-segmentation-tutorial/blob/main/img/3_Preprocessing_block.jpg?raw=1" class="img-fluid"></p>
+<section id="step-3-combine-shapefile-to-polygon" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-combine-shapefile-to-polygon">Step 3: Combine shapefile to polygon</h3>
+<p>As a small helper function we used <em>poly_from_utm</em> which aligns all polygons to the image <strong>coordinate reference system (crs)</strong>. This is not strictly neccessary, as shapefiles and images should all use the same crs (EPSG:25832) but was included as an additional step to ensure compatibility in case this may change, since the crs of the shapefile is hardcoded in the the retrieval function. - <strong>Input</strong>: polygon and image crs - <strong>Output</strong>: transformed polygon, aligned with the crs of the image</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> poly_from_utm(polygon, transform):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    poly_pts <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    poly <span class="op">=</span> shapely.ops.unary_union(polygon)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> np.array(poly.exterior.coords):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert polygons to the image CRS</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        poly_pts.append(<span class="op">~</span>transform <span class="op">*</span> <span class="bu">tuple</span>(i))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate a polygon object</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    new_poly <span class="op">=</span> Polygon(poly_pts)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_poly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-4-generate-masks" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-generate-masks">Step 4: Generate Masks</h3>
+<p>Masks are generated using the function <em>generate_masks</em> described as follows:</p>
+<p>First, the image url (constructed from the Kachelname column in the dataframe in cell 9.1.1 and a base url) is used to download the image. The image is opened with <strong>rasterio</strong>, extracting the crs information from the image’s metadata. Finally, all polygons from the geopandas dataframe containing all the shapefiles, are combined and individually aligned to the crs of the image.</p>
+<ul>
+<li><strong>Input</strong>: geopandas dataframe and tile-image path</li>
+<li><strong>Output</strong>: mask and image in 1000-1000 pixels</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_mask(shapefiles, img_url):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(img_url, <span class="st">"r"</span>) <span class="im">as</span> src:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        raster_img <span class="op">=</span> src.read()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        raster_meta <span class="op">=</span> src.meta</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate binary mask</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    polygons <span class="op">=</span> []</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    im_size <span class="op">=</span> (raster_meta[<span class="st">"height"</span>], raster_meta[<span class="st">"width"</span>])</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, row <span class="kw">in</span> shapefiles.iterrows():</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> row[<span class="st">'geometry'</span>].geom_type <span class="op">==</span> <span class="st">'Polygon'</span>:</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>            poly <span class="op">=</span> poly_from_utm(row[<span class="st">'geometry'</span>], raster_meta[<span class="st">"transform"</span>])</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>            polygons.append(poly)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> p <span class="kw">in</span> row[<span class="st">'geometry'</span>]:</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                poly <span class="op">=</span> poly_from_utm(p, raster_meta[<span class="st">"transform"</span>])</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                polygons.append(poly)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    mask <span class="op">=</span> rasterize(shapes<span class="op">=</span>polygons, out_shape<span class="op">=</span>im_size)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mask, raster_img</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-5-patchify-and-save-images-and-masks" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-patchify-and-save-images-and-masks">Step 5: Patchify and save images and masks</h3>
+<p>In order to divide the images and masks into the patches, we define the <em>load_and_patchify</em> function described with the below:</p>
+<p>The requires the specification of the number of channels, as this impacts the patchification step. This lets us use the function for both masks and images. As a first step, the image is cropped to a size divisable by the patch size (which corresponds to the model input). Then, the image is divided into patches and saved as a png into the output folder. We later implemented a similar function which does not save the patches as png-images but saves them as tensors, as this was more compatible with the chosen modelling approach.</p>
+<ul>
+<li><strong>Input</strong>: mask OR image, patch_size (<strong>should correspond to input size for model</strong>), path to output folder (e.g.&nbsp;masks or images), a string identifying each individual 1000-1000 tile (needs to be unique, otherwise output will be overwritten), number of channels (for masks: None, for images: 4)</li>
+<li><strong>Output</strong>: saves individual images as png files into the specified output folder</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_and_patchify(img, patch_size, output_path, tile_identifier, num_channels<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> num_channels:                                                            <span class="co"># this handles pictures</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        size_x <span class="op">=</span> (img.shape[<span class="dv">1</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        size_y <span class="op">=</span> (img.shape[<span class="dv">2</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> img[:, :size_x, :size_y]                                          <span class="co"># subsets image (input size is not neccessarily divisible by patch size)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> patchify(img, (num_channels, patch_size, patch_size), step<span class="op">=</span>patch_size)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> np.squeeze(patch_img)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:                                                                       <span class="co"># this handles masks</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        size_x <span class="op">=</span> (img.shape[<span class="dv">0</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        size_y <span class="op">=</span> (img.shape[<span class="dv">1</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> img[:size_x, :size_y] <span class="op">*</span> <span class="dv">255</span>                                       <span class="co"># mask needs to be multiplied by 255, as it is on a 0-1 scale</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> patchify(img, (patch_size, patch_size), step<span class="op">=</span>patch_size) </span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(patch_img.shape[<span class="dv">0</span>]):                                             <span class="co"># this could also be left out, we could just return numpy arrays and pass them to the model.</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(patch_img.shape[<span class="dv">1</span>]):</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>            single_patch_img <span class="op">=</span> patch_img[i, k]                                  <span class="co"># iterates through all patches</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>            path_string <span class="op">=</span> <span class="bu">str</span>(tile_identifier) <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> <span class="bu">str</span>(i) <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> <span class="bu">str</span>(k) <span class="op">+</span> <span class="st">'.png'</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>            file_path <span class="op">=</span> os.path.join(output_path, path_string)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> num_channels:</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                single_patch_img <span class="op">=</span> single_patch_img.swapaxes(<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>            os.makedirs(os.path.dirname(file_path), exist_ok <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(file_path)</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>            <span class="co">#print(single_patch_img)</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>            <span class="co">#break</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>            cv2.imwrite(file_path, single_patch_img)                            <span class="co"># writes the image to this pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="let-us-recap" class="level4">
+<h4 class="anchored" data-anchor-id="let-us-recap"><strong>Let us recap…</strong></h4>
+<p>In the following, we will showcase an example where we apply the three functions: <em>get_shapefile</em>, <em>generate_mask</em> and <em>load_and_patchify</em> in order to show how an image-mask pair is created.</p>
+<p>At a later stage, we will save all created patches from one image as a tensor, and then create a tensor that has all the tensors of patches for all the tiles.</p>
+<p><img src="https://raw.githubusercontent.com/GabZech/building-segmentation-tutorial/main/img/process.png" class="img-fluid"></p>
+</section>
+<section id="example-image-mask-pair-creation-walkthrough" class="level4">
+<h4 class="anchored" data-anchor-id="example-image-mask-pair-creation-walkthrough"><strong>Example: Image-mask pair creation walkthrough</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download metadata (cell 2)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># index data from metadata dataframe to get coordinates and image link</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>random_index <span class="op">=</span> np.random.choice(metadata.index.values, <span class="dv">1</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>lat <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Koordinatenursprung_East'</span>]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">long</span> <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Koordinatenursprung_North'</span>]</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> (lat, <span class="bu">long</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>base_url <span class="op">=</span> <span class="st">"https://www.opengeodata.nrw.de/produkte/geobasis/lusat/dop/dop_jp2_f10/"</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>img_path <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Kachelname'</span>]</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create image url from base url, image url and file extension</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>img_url <span class="op">=</span> base_url <span class="op">+</span> img_path <span class="op">+</span> <span class="st">'.jp2'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="and-now-we-define-our-function-to-save-the-generated-patches-as-a-tensor" class="level5">
+<h5 class="anchored" data-anchor-id="and-now-we-define-our-function-to-save-the-generated-patches-as-a-tensor">And now we define our function to save the generated patches as a tensor</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_and_patchify_tensor(img, patch_size, tile_identifier, num_channels<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> num_channels:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        size_x <span class="op">=</span> (img.shape[<span class="dv">1</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        size_y <span class="op">=</span> (img.shape[<span class="dv">2</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> img[:, :size_x, :size_y]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> patchify(img, (num_channels, patch_size, patch_size), step<span class="op">=</span>patch_size)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> np.squeeze(patch_img)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        size_x <span class="op">=</span> (img.shape[<span class="dv">0</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        size_y <span class="op">=</span> (img.shape[<span class="dv">1</span>]<span class="op">//</span>patch_size) <span class="op">*</span> patch_size</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        img <span class="op">=</span> img[:size_x, :size_y] <span class="op">*</span> <span class="dv">255</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        patch_img <span class="op">=</span> patchify(img, (patch_size, patch_size), step<span class="op">=</span>patch_size) </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(patch_img.shape[<span class="dv">0</span>]):</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(patch_img.shape[<span class="dv">1</span>]):</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>            single_patch_img <span class="op">=</span> patch_img[i, k]</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> num_channels:</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                single_patch_img <span class="op">=</span> single_patch_img.swapaxes(<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">yield</span> torch.Tensor(single_patch_img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="finally-we-generate-the-patches-for-tiles-in-bulk-and-saves-them-as-a-single-tensor" class="level5">
+<h5 class="anchored" data-anchor-id="finally-we-generate-the-patches-for-tiles-in-bulk-and-saves-them-as-a-single-tensor">Finally, we generate the patches for tiles in bulk and saves them as a single tensor</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> [(<span class="dv">0</span>,<span class="dv">0</span>)]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Msks <span class="op">=</span> []</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Imgs <span class="op">=</span> []</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):    </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> (<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> coords <span class="kw">in</span> Y:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        random_index <span class="op">=</span> np.random.choice(metadata.index.values, <span class="dv">1</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        lat <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Koordinatenursprung_East'</span>]</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">long</span> <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Koordinatenursprung_North'</span>]</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        coords <span class="op">=</span> (lat, <span class="bu">long</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        base_url <span class="op">=</span> <span class="st">"https://www.opengeodata.nrw.de/produkte/geobasis/lusat/dop/dop_jp2_f10/"</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        img_path <span class="op">=</span> metadata.loc[random_index[<span class="dv">0</span>], <span class="st">'Kachelname'</span>]</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># create image url from base url, image url and file extension</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        img_url <span class="op">=</span> base_url <span class="op">+</span> img_path <span class="op">+</span> <span class="st">'.jp2'</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        shp_data <span class="op">=</span> get_shapefile(coords)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>        mask, image <span class="op">=</span> generate_mask(shp_data, img_url)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        patch_size <span class="op">=</span> <span class="dv">256</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        imgs <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> load_and_patchify_tensor(image, patch_size, random_index[<span class="dv">0</span>], <span class="dv">4</span>)]</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>        msks <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> load_and_patchify_tensor(mask, patch_size, random_index[<span class="dv">0</span>])]</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        msk <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> msk <span class="op">&lt;</span> <span class="bu">len</span>(msks):</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> torch.count_nonzero(msks[msk]).item() <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>                rem <span class="op">=</span> np.random.choice(<span class="bu">range</span>(<span class="dv">100</span>))</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> rem <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">del</span> msks[msk]</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">del</span> imgs[msk]</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">continue</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>            msk <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> y <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>            Msks <span class="op">=</span> torch.stack(msks)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>            Imgs <span class="op">=</span> torch.stack(imgs)</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>            Msks <span class="op">=</span> torch.cat((Msks, torch.stack(msks)), <span class="dv">0</span>)</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>            Imgs <span class="op">=</span> torch.cat((Imgs, torch.stack(imgs)), <span class="dv">0</span>)</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Msks.extend(msks)</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>        <span class="co">#Imgs.extend(imgs)</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(coords)</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="bu">str</span>(y) <span class="op">+</span> <span class="st">"/100"</span>)</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>torch.save(Imgs, <span class="vs">r"..\output\tensors\Imgs.pt"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>torch.save(Msks, <span class="vs">r"..\output\tensors\Msks.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="step-6-removing-patches-with-no-visible-buildings" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-removing-patches-with-no-visible-buildings">Step 6: Removing patches with no visible buildings</h3>
+<p>As a last step before our data is ready to be plugged into the U-Net CNN, we will be removing the patches that do not have visible buildings and keep the relevant ones only.</p>
+<p>We start with loading the patches and mask tensors and displaying them as images …</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Imgs <span class="op">=</span> torch.load(<span class="vs">r"..\output\tensors\Imgs.pt"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Msks <span class="op">=</span> torch.load(<span class="vs">r"..\output\tensors\Msks.pt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="so-removing-patches-with-no-visible-buildings-and-then-finally-reducing-the-size-of-the-dataset-to-500-to-reduce-computational-load" class="level5">
+<h5 class="anchored" data-anchor-id="so-removing-patches-with-no-visible-buildings-and-then-finally-reducing-the-size-of-the-dataset-to-500-to-reduce-computational-load">So, removing patches with no visible buildings and then finally, reducing the size of the dataset to 500 to reduce computational load…</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nonEmptyIndices <span class="op">=</span> torch.unique(Msks.nonzero(as_tuple<span class="op">=</span><span class="va">True</span>)[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Msks <span class="op">=</span> Msks[nonEmptyIndices]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Msks <span class="op">=</span> Msks[:<span class="dv">500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Imgs <span class="op">=</span> Imgs[nonEmptyIndices]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Imgs <span class="op">=</span> Imgs[:<span class="dv">500</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="11d5ff6a-fcf1-411b-e9d9-0ad8a6223fcf">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>nparr <span class="op">=</span> Imgs[<span class="dv">2</span>].detach().cpu().numpy()[:,:,:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>Image.fromarray(nparr.astype(np.uint8), <span class="st">'RGB'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<p><img src="Tutorial_notebook_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="36bd33ee-db5f-4240-c56c-abc2ccb1a4f6">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>nparr <span class="op">=</span> Msks[<span class="dv">2</span>].detach().cpu().numpy().transpose()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>Image.fromarray(nparr.astype(np.uint8), <span class="st">'L'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<p><img src="Tutorial_notebook_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="step-7-create-train-validation-and-test-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-create-train-validation-and-test-datasets">Step 7: Create train, validation and test datasets</h3>
+<p>In order to meet computational restrictions, we have limited the training, validation and test datasets as follows: 400 samples for training, 80 for validation and 20 for testing</p>
+<p>To this end, we create a new class <em>PatchDataset</em> to retrieve the image-mask pairs in question.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PatchDataset(Dataset):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, X, Y):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Imgs <span class="op">=</span> X</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Msks <span class="op">=</span> Y</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx):</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.Imgs[idx].detach().cpu().numpy().transpose((<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> torch.tensor(x, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> Msks[idx].detach().cpu().numpy().transpose()</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> torch.tensor(y, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> y.<span class="bu">type</span>(torch.LongTensor)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x,y</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getimg(<span class="va">self</span>, idx, mask<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> mask:</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>            msk <span class="op">=</span> <span class="va">self</span>.Msks[idx].detach().cpu().numpy().transpose()</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>            m <span class="op">=</span> Image.fromarray(msk.astype(np.uint8), <span class="st">'L'</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> m</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>            img <span class="op">=</span> <span class="va">self</span>.Imgs[idx].detach().cpu().numpy()[:,:,:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>            z <span class="op">=</span> Image.fromarray(img.astype(np.uint8), <span class="st">'RGB'</span>)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> z</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.Imgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> PatchDataset(Imgs, Msks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>train_ds, val_ds, test_ds <span class="op">=</span> torch.utils.data.random_split(dataset, (<span class="dv">400</span>, <span class="dv">80</span>, <span class="dv">20</span>))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>train_dl <span class="op">=</span> DataLoader(train_ds, batch_size<span class="op">=</span><span class="dv">5</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>val_dl <span class="op">=</span> DataLoader(val_ds, batch_size<span class="op">=</span><span class="dv">5</span>, shuffle<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="7242a32b-426b-489f-befc-8c2e003fa98c">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>xb, yb <span class="op">=</span> <span class="bu">next</span>(<span class="bu">iter</span>(train_dl))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>xb.shape, yb.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>(torch.Size([5, 4, 256, 256]), torch.Size([5, 256, 256]))</code></pre>
+</div>
+</div>
+<p><a name="modeltraintest" href=""></a></p>
+</section>
+</section>
+</section>
+<section id="model-training-and-testing" class="level1">
+<h1>Model Training and Testing</h1>
+<p><img src="https://github.com/GabZech/building-segmentation-tutorial/blob/main/img/4_CNN.jpg?raw=1" class="img-fluid"></p>
+<section id="defining-the-u-net-model" class="level2">
+<h2 class="anchored" data-anchor-id="defining-the-u-net-model">Defining the U-Net model</h2>
+<p>Below we define the basic building blocks of the UNet model separately in order to explain the architecture of the model. The functions under <em>Option A</em> are not used to apply the model, however the same code is used in the UNet Class to define the layers. Our tutorial applies directly the full model as it is described under <em>Option B</em> which is a simplified version of The UNet neural network.</p>
+<section id="u-net-model-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="u-net-model-architecture">U-Net Model Architecture</h3>
+<p><img src="https://github.com/GabZech/building-segmentation-tutorial/blob/main/img/Unet.PNG?raw=1" class="img-fluid"></p>
+<p>As shown in the figure above, the UNet model has two main parts: an encoder and a decoder, alternatively called contract and expand block.</p>
+<p>In the contract block as series of convolutions and activations followed by a maxpooling are applied to extract the features of the images and detect buildings edges. This results in a size and resolution reductions of the treated images which does not serve the purpose of segmentation as the output must be an image of a similar resolution to input images. And here is where the expand block comes in handy.</p>
+<p>In the expand block a series of upconvolutions are applied and concatenated with the outputs of the several layers of the contract block in order to maintain the resolution obtained at the output of every feature extraction level.</p>
+</section>
+<section id="simplified-unet-model" class="level3">
+<h3 class="anchored" data-anchor-id="simplified-unet-model">Simplified UNet model</h3>
+<p>The model that our tutorial will be based on, is a simplified version of the full UNet model described in the previous section, where it uses less layers in both the encoder and decoder in order to reduce computational power.</p>
+<p>This simplified model is an adaptation from https://medium.com/analytics-vidhya/creating-a-very-simple-u-net-model-with-pytorch-for-semantic-segmentation-of-satellite-images-223aa216e705</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UNET(nn.Module):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, in_channels, out_channels):</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv1 <span class="op">=</span> <span class="va">self</span>.contract_block(in_channels, <span class="dv">32</span>, <span class="dv">7</span>, <span class="dv">3</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv2 <span class="op">=</span> <span class="va">self</span>.contract_block(<span class="dv">32</span>, <span class="dv">64</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conv3 <span class="op">=</span> <span class="va">self</span>.contract_block(<span class="dv">64</span>, <span class="dv">128</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.upconv3 <span class="op">=</span> <span class="va">self</span>.expand_block(<span class="dv">128</span>, <span class="dv">64</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.upconv2 <span class="op">=</span> <span class="va">self</span>.expand_block(<span class="dv">128</span>, <span class="dv">32</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.upconv1 <span class="op">=</span> <span class="va">self</span>.expand_block(<span class="dv">64</span>, out_channels, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__call__</span>(<span class="va">self</span>, x):</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># downsampling part</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        conv1 <span class="op">=</span> <span class="va">self</span>.conv1(x)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>        conv2 <span class="op">=</span> <span class="va">self</span>.conv2(conv1)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>        conv3 <span class="op">=</span> <span class="va">self</span>.conv3(conv2)</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>        upconv3 <span class="op">=</span> <span class="va">self</span>.upconv3(conv3)</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>        upconv2 <span class="op">=</span> <span class="va">self</span>.upconv2(torch.cat([upconv3, conv2], <span class="dv">1</span>))</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>        upconv1 <span class="op">=</span> <span class="va">self</span>.upconv1(torch.cat([upconv2, conv1], <span class="dv">1</span>))</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>        output <span class="op">=</span> torch.squeeze(upconv1, <span class="dv">1</span>).to(torch.float32)</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> output</span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> contract_block(<span class="va">self</span>, in_channels, out_channels, kernel_size, padding):</span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>        contract <span class="op">=</span> nn.Sequential(</span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>            torch.nn.Conv2d(in_channels, out_channels, kernel_size<span class="op">=</span>kernel_size, stride<span class="op">=</span><span class="dv">1</span>, padding<span class="op">=</span>padding),</span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>            torch.nn.BatchNorm2d(out_channels),</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>            torch.nn.ReLU(),</span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>            torch.nn.Conv2d(out_channels, out_channels, kernel_size<span class="op">=</span>kernel_size, stride<span class="op">=</span><span class="dv">1</span>, padding<span class="op">=</span>padding),</span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>            torch.nn.BatchNorm2d(out_channels),</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>            torch.nn.ReLU(),</span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>            torch.nn.MaxPool2d(kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a>                                 )</span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> contract</span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> expand_block(<span class="va">self</span>, in_channels, out_channels, kernel_size, padding):</span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a>        expand <span class="op">=</span> nn.Sequential(torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride<span class="op">=</span><span class="dv">1</span>, padding<span class="op">=</span>padding),</span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a>                            torch.nn.BatchNorm2d(out_channels),</span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a>                            torch.nn.ReLU(),</span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a>                            torch.nn.Conv2d(out_channels, out_channels, kernel_size, stride<span class="op">=</span><span class="dv">1</span>, padding<span class="op">=</span>padding),</span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a>                            torch.nn.BatchNorm2d(out_channels),</span>
+<span id="cb27-55"><a href="#cb27-55" aria-hidden="true" tabindex="-1"></a>                            torch.nn.ReLU(),</span>
+<span id="cb27-56"><a href="#cb27-56" aria-hidden="true" tabindex="-1"></a>                            torch.nn.ConvTranspose2d(out_channels, out_channels, kernel_size<span class="op">=</span><span class="dv">3</span>, stride<span class="op">=</span><span class="dv">2</span>, padding<span class="op">=</span><span class="dv">1</span>, output_padding<span class="op">=</span><span class="dv">1</span>) </span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a>                            )</span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> expand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-8-training-the-u-net-model" class="level3">
+<h3 class="anchored" data-anchor-id="step-8-training-the-u-net-model">Step 8: Training the U-Net model</h3>
+<p>In the training loop below, the data is passed to the defined UNet simplified model alongside the loss function and the optimizer.</p>
+<p>Our model will use a cross entropy loss function which is commonly used for segmentation algorithms, as well as an Adam optimizer to update the weights of the UNet CNN.</p>
+<p>As the task is computationally heavy, we limited the number of epochs to 10.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train(model, train_dl, valid_dl, loss_fn, optimizer, acc_fn, epochs<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> time.time()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    train_loss, valid_loss <span class="op">=</span> [], []</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    best_acc <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(epochs):</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Epoch </span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(epoch, epochs <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'-'</span> <span class="op">*</span> <span class="dv">10</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> phase <span class="kw">in</span> [<span class="st">'train'</span>, <span class="st">'valid'</span>]:</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> phase <span class="op">==</span> <span class="st">'train'</span>:</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>                model.train(<span class="va">True</span>)  </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                dataloader <span class="op">=</span> train_dl</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>                model.train(<span class="va">False</span>)  </span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>                dataloader <span class="op">=</span> valid_dl</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            running_loss <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>            running_acc <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>            step <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> x, y <span class="kw">in</span> dataloader:</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>                step <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>                <span class="co"># forward pass</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> phase <span class="op">==</span> <span class="st">'train'</span>:</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>                    optimizer.zero_grad()</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>                    outputs <span class="op">=</span> model(x)</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>                    outputs <span class="op">=</span> outputs.to(torch.float32)</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>                    y <span class="op">=</span> y.to(torch.float32)</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>                    loss <span class="op">=</span> loss_fn(outputs, y)</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>                    loss.backward()</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>                    optimizer.step()</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>                        outputs <span class="op">=</span> model(x)</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>                        outputs <span class="op">=</span> outputs.to(torch.float32)</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>                        y <span class="op">=</span> y.to(torch.float32)</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>                        loss <span class="op">=</span> loss_fn(outputs, y)</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>                <span class="co"># stats - whatever is the phase</span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>                acc <span class="op">=</span> acc_fn(outputs, y)</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>                running_acc  <span class="op">+=</span> acc<span class="op">*</span>dataloader.batch_size</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>                running_loss <span class="op">+=</span> loss<span class="op">*</span>dataloader.batch_size </span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> step <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="st">'Current step: </span><span class="sc">{}</span><span class="st">  Loss: </span><span class="sc">{}</span><span class="st">  Acc: </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(step, loss, acc))</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>            epoch_loss <span class="op">=</span> running_loss <span class="op">/</span> <span class="bu">len</span>(dataloader.dataset)</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>            epoch_acc <span class="op">=</span> running_acc <span class="op">/</span> <span class="bu">len</span>(dataloader.dataset)</span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st"> Loss: </span><span class="sc">{:.4f}</span><span class="st"> Acc: </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(phase, epoch_loss, epoch_acc))</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a>            train_loss.append(epoch_loss) <span class="cf">if</span> phase<span class="op">==</span><span class="st">'train'</span> <span class="cf">else</span> valid_loss.append(epoch_loss)</span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>    time_elapsed <span class="op">=</span> time.time() <span class="op">-</span> start</span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Training complete in </span><span class="sc">{:.0f}</span><span class="st">m </span><span class="sc">{:.0f}</span><span class="st">s'</span>.<span class="bu">format</span>(time_elapsed <span class="op">//</span> <span class="dv">60</span>, time_elapsed <span class="op">%</span> <span class="dv">60</span>))    </span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> train_loss, valid_loss    </span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> acc_metric(predb, yb):</span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (predb.argmax(dim<span class="op">=</span><span class="dv">0</span>) <span class="op">==</span> yb).<span class="bu">float</span>().mean()            </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>unet <span class="op">=</span> UNET(<span class="dv">4</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-9-testing-the-u-net-model-using-loss-function" class="level3">
+<h3 class="anchored" data-anchor-id="step-9-testing-the-u-net-model-using-loss-function">Step 9: Testing the U-Net model using loss function</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>loss_fn <span class="op">=</span> nn.CrossEntropyLoss()</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> torch.optim.Adam(unet.parameters(), lr<span class="op">=</span><span class="fl">0.01</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="913350e6-bdd1-4cd7-bc5b-ea9c5ad0469a">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>train_loss, valid_loss <span class="op">=</span> train(unet, train_dl, val_dl, loss_fn, opt, acc_metric, epochs<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 0/9
+----------
+Current step: 10  Loss: 84537.5625  Acc: 0.282888799905777
+Current step: 20  Loss: 104292.8515625  Acc: 0.37369078397750854
+Current step: 30  Loss: 30169.71484375  Acc: 0.66461181640625
+Current step: 40  Loss: 55332.2734375  Acc: 0.2265472412109375
+Current step: 50  Loss: 89537.1328125  Acc: 0.1155853271484375
+Current step: 60  Loss: 107577.734375  Acc: 0.0713958740234375
+Current step: 70  Loss: 68230.6953125  Acc: 0.7231658697128296
+Current step: 80  Loss: 93159.3984375  Acc: 0.21868285536766052
+train Loss: 65945.2734 Acc: 0.3234497308731079
+Current step: 10  Loss: 75424.015625  Acc: 0.20256957411766052
+valid Loss: 62630.3438 Acc: 0.2418949156999588
+Epoch 1/9
+----------
+Current step: 10  Loss: 88116.046875  Acc: 0.005383300594985485
+Current step: 20  Loss: 49402.8984375  Acc: 0.39223939180374146
+Current step: 30  Loss: 84934.234375  Acc: 0.25004273653030396
+Current step: 40  Loss: 20790.810546875  Acc: 0.005871581844985485
+Current step: 50  Loss: 24399.26171875  Acc: 0.01784973219037056
+Current step: 60  Loss: 65099.07421875  Acc: 0.00848999060690403
+Current step: 70  Loss: 39270.81640625  Acc: 0.0775604248046875
+Current step: 80  Loss: 94672.0  Acc: 0.21000976860523224
+train Loss: 64430.0586 Acc: 0.25359416007995605
+Current step: 10  Loss: 73065.9921875  Acc: 0.6591156125068665
+valid Loss: 62440.9297 Acc: 0.3279617428779602
+Epoch 2/9
+----------
+Current step: 10  Loss: 40608.8203125  Acc: 0.5492828488349915
+Current step: 20  Loss: 100450.578125  Acc: 0.30675047636032104
+Current step: 30  Loss: 84356.5703125  Acc: 0.5498504638671875
+Current step: 40  Loss: 92657.2265625  Acc: 0.19535216689109802
+Current step: 50  Loss: 62300.1484375  Acc: 0.2795166075229645
+Current step: 60  Loss: 52460.66796875  Acc: 0.13462524116039276
+Current step: 70  Loss: 39791.2734375  Acc: 0.15395812690258026
+Current step: 80  Loss: 27817.13671875  Acc: 0.5532318353652954
+train Loss: 64417.6055 Acc: 0.24520328640937805
+Current step: 10  Loss: 76119.3515625  Acc: 0.5686981081962585
+valid Loss: 62299.5117 Acc: 0.28999367356300354
+Epoch 3/9
+----------
+Current step: 10  Loss: 75168.5234375  Acc: 0.2801666259765625
+Current step: 20  Loss: 98786.4140625  Acc: 0.10853271186351776
+Current step: 30  Loss: 81462.765625  Acc: 0.17912903428077698
+Current step: 40  Loss: 17000.859375  Acc: 0.0013519286876544356
+Current step: 50  Loss: 71480.7109375  Acc: 0.24383850395679474
+Current step: 60  Loss: 49601.5078125  Acc: 0.09389038383960724
+Current step: 70  Loss: 53039.54296875  Acc: 0.0475616455078125
+Current step: 80  Loss: 71252.0625  Acc: 0.20376281440258026
+train Loss: 63981.3203 Acc: 0.18004848062992096
+Current step: 10  Loss: 103098.734375  Acc: 6.103515625e-05
+valid Loss: 61881.9258 Acc: 0.0997341126203537
+Epoch 4/9
+----------
+Current step: 10  Loss: 66027.28125  Acc: 0.20502319931983948
+Current step: 20  Loss: 89533.125  Acc: 0.01425781287252903
+Current step: 30  Loss: 30793.521484375  Acc: 0.10321960598230362
+Current step: 40  Loss: 40159.33984375  Acc: 0.416342169046402
+Current step: 50  Loss: 56354.23828125  Acc: 0.0292205810546875
+Current step: 60  Loss: 130204.1484375  Acc: 0.15809020400047302
+Current step: 70  Loss: 102024.359375  Acc: 0.13773193955421448
+Current step: 80  Loss: 82141.0625  Acc: 0.04859008640050888
+train Loss: 64068.7383 Acc: 0.1952800750732422
+Current step: 10  Loss: 37640.0390625  Acc: 0.23477783799171448
+valid Loss: 62828.1797 Acc: 0.3101940155029297
+Epoch 5/9
+----------
+Current step: 10  Loss: 56176.38671875  Acc: 0.17520447075366974
+Current step: 20  Loss: 98615.828125  Acc: 0.4554443359375
+Current step: 30  Loss: 47142.9609375  Acc: 0.03788452222943306
+Current step: 40  Loss: 53030.8984375  Acc: 0.36710816621780396
+Current step: 50  Loss: 12665.658203125  Acc: 0.09206543117761612
+Current step: 60  Loss: 61349.0  Acc: 0.433035284280777
+Current step: 70  Loss: 41351.41015625  Acc: 0.17420348525047302
+Current step: 80  Loss: 44932.1015625  Acc: 0.387399286031723
+train Loss: 63631.4648 Acc: 0.17689059674739838
+Current step: 10  Loss: 53844.7109375  Acc: 0.663226306438446
+valid Loss: 62123.6172 Acc: 0.3516763746738434
+Epoch 6/9
+----------
+Current step: 10  Loss: 36602.06640625  Acc: 0.10400390625
+Current step: 20  Loss: 67225.265625  Acc: 0.0006347656017169356
+Current step: 30  Loss: 66541.046875  Acc: 0.44011229276657104
+Current step: 40  Loss: 86907.796875  Acc: 0.01041564904153347
+Current step: 50  Loss: 37614.6796875  Acc: 0.5054076910018921
+Current step: 60  Loss: 94093.6171875  Acc: 0.09178467094898224
+Current step: 70  Loss: 35336.55859375  Acc: 0.29105836153030396
+Current step: 80  Loss: 75781.546875  Acc: 0.2137298583984375
+train Loss: 63669.0586 Acc: 0.20573550462722778
+Current step: 10  Loss: 26851.140625  Acc: 0.44560545682907104
+valid Loss: 61742.3672 Acc: 0.27523040771484375
+Epoch 7/9
+----------
+Current step: 10  Loss: 84024.1953125  Acc: 0.1139068603515625
+Current step: 20  Loss: 46755.8515625  Acc: 0.14397887885570526
+Current step: 30  Loss: 28437.40625  Acc: 0.13330993056297302
+Current step: 40  Loss: 76273.75  Acc: 0.12116394191980362
+Current step: 50  Loss: 115435.921875  Acc: 0.02687683142721653
+Current step: 60  Loss: 94116.734375  Acc: 0.010693359188735485
+Current step: 70  Loss: 55271.55078125  Acc: 0.399038702249527
+Current step: 80  Loss: 42277.046875  Acc: 0.02001953125
+train Loss: 63410.0664 Acc: 0.19017261266708374
+Current step: 10  Loss: 15469.154296875  Acc: 0.7412109375
+valid Loss: 61237.4883 Acc: 0.18726196885108948
+Epoch 8/9
+----------
+Current step: 10  Loss: 36116.41015625  Acc: 0.16562804579734802
+Current step: 20  Loss: 49313.5703125  Acc: 0.01326904259622097
+Current step: 30  Loss: 69808.171875  Acc: 0.30408018827438354
+Current step: 40  Loss: 52558.51953125  Acc: 0.1826629638671875
+Current step: 50  Loss: 103693.2109375  Acc: 0.31152039766311646
+Current step: 60  Loss: 64523.9140625  Acc: 0.23153991997241974
+Current step: 70  Loss: 80128.6796875  Acc: 0.1439208984375
+Current step: 80  Loss: 131361.21875  Acc: 0.01623840257525444
+train Loss: 63164.4648 Acc: 0.18899817764759064
+Current step: 10  Loss: 77651.078125  Acc: 0.38095396757125854
+valid Loss: 61586.7500 Acc: 0.19515475630760193
+Epoch 9/9
+----------
+Current step: 10  Loss: 64315.2109375  Acc: 0.21810607612133026
+Current step: 20  Loss: 87306.71875  Acc: 0.6087859869003296
+Current step: 30  Loss: 36472.9765625  Acc: 0.01695556566119194
+Current step: 40  Loss: 66208.953125  Acc: 0.09434203803539276
+Current step: 50  Loss: 95698.9609375  Acc: 0.02288818359375
+Current step: 60  Loss: 60539.6171875  Acc: 0.6055053472518921
+Current step: 70  Loss: 47410.8046875  Acc: 0.2612060606479645
+Current step: 80  Loss: 87526.421875  Acc: 0.0442962646484375
+train Loss: 63170.4766 Acc: 0.19234642386436462
+Current step: 10  Loss: 24076.482421875  Acc: 0.0019927979446947575
+valid Loss: 60972.6367 Acc: 0.16277733445167542
+Training complete in 23m 58s</code></pre>
+</div>
+</div>
+<p>It is notable that the values obtained for Accuracy and Losses are not satisfactory, however due to the computational restrictions of the assignments, a compromise had to be found between the evaluation metrics and visual results</p>
+</section>
+<section id="step-10-running-the-model-to-generate-a-sample-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="step-10-running-the-model-to-generate-a-sample-prediction">Step 10: Running the model to generate a sample prediction</h3>
+<p>Running the model to generate a prediction and compare it to the target</p>
+<div class="cell" data-outputid="6db4a23d-163a-468c-bde2-f87e2592f956">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> xb[<span class="dv">2</span>,:,:]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x.detach().cpu().numpy().transpose((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> x[:,:,:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> Image.fromarray(img.astype(np.uint8), <span class="st">'RGB'</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<p><img src="Tutorial_notebook_files/figure-html/cell-32-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    predb <span class="op">=</span> unet(xb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="afffa933-eeb2-49b7-fd26-11d78c2b6daa">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> predb[<span class="dv">2</span>,:,:]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mskp <span class="op">=</span> p.detach().cpu().numpy()</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>mp <span class="op">=</span> PIL.ImageOps.invert(Image.fromarray(mskp.astype(np.uint8), <span class="st">'L'</span>))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>mp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<p><img src="Tutorial_notebook_files/figure-html/cell-34-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="803c4f59-d335-4f28-8a61-bc0de8d9e358">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> yb[<span class="dv">2</span>,:,:]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>msk <span class="op">=</span> y.detach().cpu().numpy()</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> Image.fromarray(msk.astype(np.uint8), <span class="st">'L'</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<p><img src="Tutorial_notebook_files/figure-html/cell-35-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p><a name="results-and-discussion" href=""></a></p>
+</section>
+</section>
+</section>
+<section id="results-discussion" class="level1">
+<h1>Results &amp; Discussion</h1>
+<p>As mentioned, for each epoch, our model’s error rate was calculated using Cross Entropy loss, which is a very common loss function for classification and image recognition. This loss function did a good job of training the model to generate masks, however the values were extremely high because of how cross entropy works for image data that is not normalized. Therefore for calculating accuracy, a different metric was used, based on Jaccard Similarity. The score was calculated to be equal to the number of pixels whose labels matched between the target and the predicted masks divided by the total number of pixels.</p>
+<p>The results, while not flawless, are encouraging. Visualizing the masks allows us to see that the model is already picking up on significant patterns and is already very close to the ground truth in several cases. Increasing the number of epochs and training samples is noticeably improving this, implying that if we were to commit enough computational and time resources into it, its performance would be substantially higher.</p>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>Our tutorial is focused on education and learning, hoping to generate interest in the use of satellite and aerial image segmentation in policy contexts. Balancing explainability of our methodology and model optimization, we have made deliberate simplifications in our approach that compromise model performance.</p>
+<p><strong>Reducing the size of our data set:</strong> We have trained our model using a limited number of samples due to constraints in time and computational capacity. We have used 400 data points in our training dataset, 80 in the validation dataset and 20 in the test dataset, which are generally lower than in similar real-world applications. Our main goal was to showcase a proof of concept that can potentially be scaled in the future. Therefore, we chose a sufficiently small dataset to keep the required computational time low. It is noted that, given the current performance of our model, it should not be used to conduct meaningful analyses.</p>
+<p><strong>Reducing the number of epochs:</strong> For the same reasons of computational capacities, we have limited the number of epochs, i.e.&nbsp;the number of passes of the entire training dataset during the learning process, to nine epochs. As with a bigger data set, we would expect performance of our segmentation model to grow substantially if users increase the number of epochs in future applications.</p>
+<p><strong>Removing aerial images without buildings:</strong> Our original dataset of aerial images from North Rhine-Westphalia contains a large number of images which do not have visible buildings in them, for example of forested areas. Including them would lead to a class imbalanced dataset which is a frequent problem when training deep neural networks and ultimately decreases performance. To avoid imbalance, we removed image-mask patches with no visible buildings from our dataset before training our segmentation algorithm.</p>
+<p><strong>Incomplete building footprint data:</strong> There are buildings which show up on the raw aerial images but are not present in the footprint dataset. This can happen with smaller constructions like sheds or bicycle lockers in backyards, but it might also happen with larger buildings due to illegal or non-registered constructions. This potentially increases the error rate if the goal is to segment all kinds of buildings with the model.</p>
+<p><strong>Single-class segmentation:</strong> The deep learning algorithm we use is a single-class detector, i.e.&nbsp;it is only capable of identifying if, and where, a building exists in an image or not (building vs.&nbsp;no building). In real-world applications, however, it might be of more relevance to identify specific types of buildings (e.g.&nbsp;residential vs.&nbsp;commercial buildings) or certain roof characteristics and structures. To accommodate these extensions, the segmentation algorithm would have to be adapted to instance and panoptic segmentation tasks.</p>
+</section>
+<section id="data-accessibility-and-availability" class="level2">
+<h2 class="anchored" data-anchor-id="data-accessibility-and-availability">Data accessibility and availability</h2>
+<p><strong>Generalizability of model trained on German data:</strong> A potential use of this model is to identify patterns in urban development in regions where footprint data is non-existent, uncommon or not openly accessible. However, since the algorithm is trained using German data only, it might not be transferable to other regions, for example those with informal settlements and sheds that are not common in Germany. Right now, the data set we use is biased toward building types that exist in Germany but excludes architectural features common in other parts of the world. For future applications, we would recommend training a model using much more diverse data from different regions of the world to account for these architectural variations.</p>
+<p><strong>Availability of high-resolution aerial imagery:</strong> This model was trained using high-resolution images (10 cm per pixel). At the time of writing, it is rather uncommon to find images at such resolution that are openly available. To the best of our knowledge, even within Germany, North Rhine-Westphalia is the only state that publishes data at such resolutions. It is therefore unclear how the model would perform in other regions where only lower image resolutions are available. That performance should be carefully measured and tested before making assumptions about the urbanization of a region through the use of this methodology.</p>
+<p><strong>Accessibility of aerial imagery:</strong> It is more likely than not that regions exist where aerial imagery is not publicly available at all or highly restricted. At the same time, it is those regions that could be of particular interest for analyzing patterns of urban development, energy potential and other use cases. Our methodology would, however, be of little use there and could even reinforce a sense of neglect by local communities if such a model was used at scale in other regions. A potential remedy would be private data providers that sell aerial and satellite imagery against a fee; however, this may incur additional costs on such local communities.</p>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>Our tutorial provides space for exploration and different applications of image segmentation once users work through the steps of our image segmentation workflow. However, we want to close our tutorial with a few <strong>recommendations and best practices</strong> if you choose to use our data, methodology or workflow.</p>
+<ul>
+<li><p>If you want to conduct similar analyses in comparable regions, train the model using a much bigger sample and higher epoch numbers, while remaining conscious of computational capacities.</p></li>
+<li><p>If you wish to conduct analyses outside of (northwest) Germany, try to find aerial imagery and building footprint data for your own region and train the algorithm using those, if possible.</p></li>
+<li><p>If you choose to adopt the U-Net model architecture we used, try increasing the model input shape and adding more convolutions in both encoder and decoder layers. The training data used for the model has an uncommonly high resolution which in turn might require more convolutions for the filter masks to learn high-level representations of the building footprints.</p></li>
+<li><p>The data preparation pipeline will work with other data from the GEOportal.NRW. Using other or additional data could be promising to tackle related tasks, for instance ground sealing estimation.</p></li>
+</ul>
+<p>Beyond minor extensions to our approach, we hope our tutorial in general grew interest in the <strong>wider adoption of image segmentation in areas of public policy and government</strong>. In addition to applications in smart cities, disaster response or energy forecasting, our image segmentation model could, for example, be used to detect illegal or unregistered settlements which are currently not registered in building footprint datasets. Similarly, matching the results of our model to footprint data could help spot buildings with overly large roof sizes or unauthorized constructions sites, increasing overall public safety and accountability.</p>
+<p>Applications for image segmentation are manifold. Use cases are growing in numbers and impact, while data are increasingly available at decreasing cost. Conditions are ripe for governments and policy-makers to add segmentation of satellite and aerial imagery to their toolset. We hope our tutorial can make an interesting and useful contribution to improving public services through the use of deep learning technologies. We look forward to any applications that build on our work.</p>
+<p><a name="references" href=""></a></p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<ul>
+<li>Maurício Cordeiro (2020): <a href="https://medium.com/analytics-vidhya/creating-a-very-simple-u-net-model-with-pytorch-for-semantic-segmentation-of-satellite-images-223aa216e705">Creating a Very Simple U-Net Model with PyTorch for Semantic Segmentation of Satellite Images</a>.</li>
+<li>Robin Cole (2022): <a href="https://www.satellite-image-deep-learning.com/p/a-brief-introduction-to-satellite-365">A brief introduction to satellite image segmentation with neural networks</a>.</li>
+<li>Lucas Pedrosa Soares (2019): <a href="https://lpsmlgeo.github.io/2019-09-22-binary_mask/">Converting Shapefiles into a Binary Raster</a>.</li>
+</ul>
+<p><a name="acknowledgements" href=""></a></p>
+</section>
+<section id="acknowledgements" class="level1">
+<h1>Acknowledgements</h1>
+<p>The team would like to extend their thanks to our professor Lynn Kaack and our teacher assistant Florian Nachrigall for their efforts throughout the semester.</p>
+<p>The workload was evenly distributed among the different team members, namely Gabriel and Julian who managed the data preparation and preprocessing parts, Krishna for taking lead on the model implementation and training, Florian and Nassim for following up with the team members to compile this tutorial and presentation.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
